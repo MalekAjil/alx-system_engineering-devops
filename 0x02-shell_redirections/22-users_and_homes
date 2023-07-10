@@ -1,0 +1,2 @@
+#!/bin/bash
+users=$(awk -F: '{ print $1 }' /etc/passwd) | home_dirs=$(awk -F: '{ print $6 }' /etc/passwd) | data=$(paste -d ' ' <(echo "$users") <(echo "$home_dirs") | sort) | echo "$data"

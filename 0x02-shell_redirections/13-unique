@@ -1,2 +1,2 @@
 #!/bin/bash
-count[${words[@]}]++ 
+echo t[${words[@]}]++ 

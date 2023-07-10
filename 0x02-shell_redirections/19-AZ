@@ -1,0 +1,2 @@
+#!/bin/bash
+read -p input | echo ${{${input//A/Z}//c/e}

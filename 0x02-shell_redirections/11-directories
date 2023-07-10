@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ad ./
+$((find . -mindepth 1 -type d | wc -l)-2)

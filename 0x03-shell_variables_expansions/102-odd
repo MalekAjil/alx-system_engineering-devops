@@ -1,2 +1,2 @@
 #!/bin/bash
-read -r line | echo "$line"
+awk 'NR%2==1' 

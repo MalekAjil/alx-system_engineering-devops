@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying folder content
+for var in *
+do
+	if [[ $var == *-* ]]; then
+		echo "${var#*-}";
+	fi
+done

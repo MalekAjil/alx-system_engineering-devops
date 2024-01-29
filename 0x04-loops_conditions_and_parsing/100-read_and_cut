@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script is displaying the content of the file /etc/passwd.
 exec 3</etc/passwd
-while IFS=: read -u 3 username password homedir; do
+while IFS=: read -r -u 3 username userid homedir; do
 	echo "$username $userid $homedir"
 done

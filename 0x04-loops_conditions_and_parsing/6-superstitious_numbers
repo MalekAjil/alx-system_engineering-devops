@@ -6,7 +6,7 @@ while [ $var -le 20 ]; do
 	case $var in
 		4) echo "bad luck from China";;
 		9) echo "bad luck from Japan";;
-		17) echo "bad lusck from Italy";;
+		17) echo "bad luck from Italy";;
 	esac
 	var=$((var+1))
 done

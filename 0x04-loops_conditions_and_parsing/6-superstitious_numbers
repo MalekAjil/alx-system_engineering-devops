@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
+# This script prints 1 -> 20 with messages
 var=1
 while [ $var -le 20 ]; do
 	echo $var

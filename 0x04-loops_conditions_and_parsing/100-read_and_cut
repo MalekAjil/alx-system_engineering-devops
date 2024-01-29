@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying the content of the file /etc/passwd.
+file="/etc/passwd"
+if [ -e $file ]; then
+	while [[ var = read $file ]]; do
+		echo "$var"
+	done
+fi

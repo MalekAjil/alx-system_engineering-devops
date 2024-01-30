@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # Bash script that displays To infinity and beyond indefinitely.
+term() {
+	echo "I am invincible!!!"
+	exit 0
+}
+trap term SIGTERM
 while true; do
 	echo "To infinity and beyond"
 	sleep 2

@@ -2,7 +2,7 @@
 # Bash script that displays the PID, along with the process name, of processes whose name contain the word bash.
 for pr in /proc/*/cmdline; do
 	read -r var < "$pr"
-	if [[ $var == *bash* ]]; then
+	if [[ $var == bash ]]; then
 		pid=${pr#/proc/}
 		pid=${pid%/cmdline}
 		echo "$pid $var"

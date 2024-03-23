@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# a Bash script that configure connection to the server
+{
+  echo "Host *"
+  echo "  IdentityFile ~/.ssh/school"
+  echo "  PasswordAuthentication no"
+} > ~/.ssh/config
+chmod 600 ~/.ssh/config

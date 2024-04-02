@@ -1,2 +1,18 @@
 #!/usr/bin/env bash
 # configure web-02 to be identical to web-01
+sudo apt-get update
+sudo apt-get install -y nginx
+
+sudo tee /etc/nginx/conf.d/custom_headers.conf > /dev/null <<EOF
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        add_header X-Served-By \$hostname;
+    }
+}
+EOF
+sudo nginx -t
+sudo systemctl reload nginx

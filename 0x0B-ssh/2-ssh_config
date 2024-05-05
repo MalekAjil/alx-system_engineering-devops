@@ -4,5 +4,5 @@
   echo "Host *"
   echo "  IdentityFile ~/.ssh/school"
   echo "  PasswordAuthentication no"
-} > ~/.ssh/config
-chmod 600 ~/.ssh/config
+} > /etc/ssh/ssh_config 
+chmod 600 /etc/ssh/ssh_config

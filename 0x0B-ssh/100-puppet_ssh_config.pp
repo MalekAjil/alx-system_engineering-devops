@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 class ssh_config {
   file { '/etc/ssh/ssh_config':
     ensure  => file,

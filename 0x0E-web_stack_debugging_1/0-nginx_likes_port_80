@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-
+sudo sed -i '/listen \[::\]:80 default_server;/d' /etc/nginx/sites-available/default
+sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+sudo systemctl reload nginx

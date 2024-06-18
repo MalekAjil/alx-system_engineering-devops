@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """
-0-main
+Subscrips
 """
 import sys
+
+
+def number_of_subscribers(subreddit):
+    return 0

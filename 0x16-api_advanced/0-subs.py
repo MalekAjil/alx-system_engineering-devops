@@ -10,9 +10,9 @@ def number_of_subscribers(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     hdrs = {'User-Agent': 'custom user-agent'}
     try:
-        res = requests.get(url, headers=hdrs, allow_redirections=False)
-        if response.status_code == 200:
-            return response.json()['data']['subscribers']
+        res = requests.get(url, headers=hdrs, allow_redirects=False)
+        if res.status_code == 200:
+            return res.json()['data']['subscribers']
         else:
             return 0
     except Exception as ex:

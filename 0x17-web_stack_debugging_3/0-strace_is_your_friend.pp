@@ -1,5 +1,7 @@
-#Using strace, find out why Apache is returning a 500 error. Once you find the issue, fix it and then automate it using Puppet (instead of using Bash as you were previously doing).
-class apache_config {
+#Using strace, find out why Apache is returning a 500 error.
+#Once you find the issue, fix it and then automate it using Puppet
+#(instead of using Bash as you were previously doing).
+class apache::config {
   file_line { 'apache_server_name':
     ensure => present,
     path   => '/etc/apache2/apache2.conf',
@@ -7,5 +9,4 @@ class apache_config {
     match  => '^#?ServerName',
   }
 }
-
-include apache_config
+include apache::config

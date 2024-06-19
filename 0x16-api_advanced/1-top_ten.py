@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """
-0-main
+1-top_ten
 """
-import sys
+import requests
+
+
+def top_ten(subreddit):
+

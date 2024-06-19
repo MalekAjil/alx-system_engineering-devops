@@ -11,7 +11,6 @@ def number_of_subscribers(subreddit):
     hdrs = {'User-Agent': 'programming'}
     try:
         res = requests.get(url, headers=hdrs, allow_redirects=False)
-        #print(res)
         if res.status_code == 200:
             return res.json()['data']['subscribers']
         else:

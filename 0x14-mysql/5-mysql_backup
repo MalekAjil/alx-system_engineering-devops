@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # a bash script to make a backup for the database
-day=$(date +"%d")
-month=$(date +"%m")
-year=$(date +"%Y")
-fname="$day-$month-$year.tar.gz"
-mysqldump --all-databases -u root --password="$1" > backup.sql
-tar -czvf "$fname" backup.sql
+mydate=$(date +"%d-%m-%Y")
+mysqldump --opt --all-databases -u root --password="$1" > backup.sql
+tar -czvf "$mydate.tar.gz" backup.sql

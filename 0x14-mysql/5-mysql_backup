@@ -3,6 +3,6 @@
 day = $(date + "%d")
 month = $(date + "%m")
 year = $(date + "%y")
-fname = "$day-$month-%year.tar.gz"
+fname = "$day-$month-$year.tar.gz"
 mydump --all-databases -u root --password="$1" > backup.sql
 tar -czvf "$fname" backup.sql

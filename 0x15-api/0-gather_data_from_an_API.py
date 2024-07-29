@@ -26,11 +26,13 @@ def get_todo_list(empid):
             if task.get("completed"):
                 dtasks.append(task)
 
-        print(f"Employee {empname} is done with tasks ({len(dtasks)}/{ttasks}):")
+        print(f"Employee {empname} is done with tasks \
+                ({len(dtasks)}/{ttasks}):")
         for task in dtasks:
-            print(f"\t{task['title']}")
+            print(f"\t {task['title']}")
 
     except requests.RequestException as e:
         print(f"Error fetching data: {e}")
+
 
 get_todo_list(sys.argv[1])

@@ -25,9 +25,8 @@ def get_todo_list(empid):
         for task in resdata2:
             if task.get("completed"):
                 dtasks.append(task)
-
-        print(f"Employee {empname} is done with tasks \
-                ({len(dtasks)}/{ttasks}):")
+        dtc = len(dtasks)
+        print(f"Employee {empname} is done with tasks({dtc}/{ttasks}):")
         for task in dtasks:
             print(f"\t {task['title']}")
 

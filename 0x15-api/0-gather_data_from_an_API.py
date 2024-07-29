@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-1-export_to_CSV Module
+0-gather_data_from_an_API Module
 a Python script that, using this REST API, for a given employee ID,
 returns information about his/her TODO list progress.
 """
@@ -35,4 +35,5 @@ def get_todo_list(empid):
         print(f"Error fetching data: {e}")
 
 
-get_todo_list(sys.argv[1])
+if __name__ == "__main__":
+    get_todo_list(sys.argv[1])

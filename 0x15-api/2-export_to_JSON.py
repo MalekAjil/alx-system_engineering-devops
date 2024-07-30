@@ -22,13 +22,13 @@ def get_todo_list(empid):
         res2 = requests.get(api_url + f"/todos?userId={empid}")
         resdata2 = res2.json()
         with open(f"{empid}.json", 'w', encoding='UTF8', newline='') as f:
-            data = [empid, []]
+            data = []
             for task in resdata2:
                 tsk = {"task": task['title'],
                        "completed": task['completed'],
                        "username": username}
-                data[1].append(tsk)
-            json.dump(data, f)
+                data.append(tsk)
+            json.dump({empid: data}, f)
 
     except requests.RequestException as e:
         print(f"Error fetching data: {e}")

@@ -22,7 +22,7 @@ def get_todo_list(empid):
         res2 = requests.get(api_url + f"/todos?userId={empid}")
         resdata2 = res2.json()
         with open(f"{empid}.csv", 'w', encoding='UTF8', newline='') as f:
-            writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for task in resdata2:
                 data = [empid, username, task['completed'],
                         task['title']]

@@ -17,14 +17,15 @@ def get_todo_list(empid):
         res = requests.get(api_url + f"/users/{empid}")
         resdata = res.json()
 
-        empname = resdata.get("name")
+        username = resdata.get("username")
 
         res2 = requests.get(api_url + f"/todos?userId={empid}")
         resdata2 = res2.json()
-        with open(f"{empid}.csv", 'w', encoding='UTF8') as f:
-            writer = csv.writer(f)
+        with open(f"{empid}.csv", 'w', encoding='UTF8', newline='') as f:
+            writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
             for task in resdata2:
-                data = [empid, empname, task['completed'], task['title']]
+                data = [empid, username, task['completed'],
+                        task['title']]
                 writer.writerow(data)
 
     except requests.RequestException as e:

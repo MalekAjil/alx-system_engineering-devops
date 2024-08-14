@@ -3,5 +3,5 @@
 #(instead of using Bash as you were previously doing).
 exec { 'correct_config_setting':
   command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
-  path   => '/usr/local/bin/:/bin/',
+  path    => '/usr/local/bin/:/bin/',
 }
